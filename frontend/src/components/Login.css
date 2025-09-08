@@ -1,0 +1,65 @@
+/* src/components/Login.css */
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(7, 161, 199, 0.8), rgba(106, 17, 203, 0.8)), 
+              url('../assets/e-voting.png'); /* Updated background image path */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+.login-image {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #379cf5;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-button:hover {
+  background-color: #00b33c;
+}

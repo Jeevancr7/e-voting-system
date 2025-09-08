@@ -1,0 +1,170 @@
+/* src/components/VotingPage.css */
+
+.voting-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px;
+  font-family: 'Arial', sans-serif;
+
+  /* Creative warm yellow-to-orange gradient background with a hint of purple */
+  background: linear-gradient(135deg, rgba(255, 204, 0, 0.8), rgba(255, 153, 51, 0.8), rgba(102, 51, 153, 0.7));
+  background-size: cover;
+  background-position: center;
+
+  /* Subtle background animation for added creativity */
+  animation: backgroundMove 20s infinite ease-in-out;
+
+  position: relative;
+  z-index: 1;
+  overflow: hidden; /* Prevents any elements from going out of the page */
+}
+
+/* Animation for dynamic background */
+@keyframes backgroundMove {
+  0% {
+    background-position: center top;
+  }
+  50% {
+    background-position: center bottom;
+  }
+  100% {
+    background-position: center top;
+  }
+}
+
+h2 {
+  font-size: 3.5em;
+  color: #fff;
+  margin-bottom: 40px;
+  text-align: center;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7); /* Strong text shadow for visibility */
+  animation: fadeIn 1s ease-in-out; /* Smooth fade-in effect for the heading */
+  font-weight: bold;
+  letter-spacing: 1.5px; /* Adds more spacing for creativity */
+}
+
+/* Form content with smooth entrance and creative box shadow */
+.voting-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 380px;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.95); /* Slight transparency with white background */
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25); /* Larger shadow for depth */
+  animation: formFadeIn 0.9s ease-out; /* Fade-in animation for the form */
+  transform: scale(1.02); /* Slightly enlarged form for better focus */
+}
+
+/* Label styling with vibrant, attention-grabbing design */
+.label {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  color: #ff6600; /* Bright orange color */
+  text-transform: uppercase;
+  letter-spacing: 2px; /* More space between letters for emphasis */
+}
+
+/* Candidate selection dropdown with smooth transitions */
+.candidate-select {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 30px;
+  font-size: 1.2em;
+  border: 2px solid #ff9900;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+.candidate-select:focus {
+  border-color: #ffcc00; /* Focus effect with lighter yellow */
+  box-shadow: 0 0 8px rgba(255, 204, 0, 0.7); /* Glowing yellow border */
+}
+
+/* Vote button with creative hover effect */
+.vote-button {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.3em;
+  color: #fff;
+  background-color: #ff6600; /* Bold orange background */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 1.5px; /* Space between letters for a modern look */
+  font-weight: bold;
+}
+
+.vote-button:hover {
+  background-color: #ff9933; /* Lighter orange on hover */
+  transform: scale(1.1); /* Scale-up effect */
+}
+
+.vote-button:active {
+  background-color: #e65c00; /* Darker orange on click */
+  transform: scale(1); /* Reset scale on click */
+}
+
+/* Fade-in animation for heading */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation for form content */
+@keyframes formFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Message area with creative text effects */
+.message {
+  margin-top: 25px;
+  font-size: 1.3em;
+  color: #ff3333;
+  font-weight: bold;
+  text-align: center;
+  animation: messageFadeIn 1s ease-in-out; /* Fade-in effect for message */
+}
+
+/* Creative fade-in effect for message area */
+@keyframes messageFadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Creative hover effect for entire voting form */
+.voting-container:hover {
+  transform: scale(1.02); /* Slight zoom effect on hover */
+  transition: transform 0.3s ease-in-out;
+}

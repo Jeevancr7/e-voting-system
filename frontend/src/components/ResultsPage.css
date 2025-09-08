@@ -1,0 +1,151 @@
+/* src/components/ResultsPage.css */
+
+.results-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  font-family: 'Arial', sans-serif;
+  
+  /* Gradient from hot pink to electric blue for a vibrant feel */
+  background: linear-gradient(135deg, rgba(255, 105, 180, 0.8), rgba(0, 204, 255, 0.8)); /* Bold pink to electric blue gradient */
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  
+  /* Dynamic background animation for fluidity */
+  animation: backgroundMove 20s infinite ease-in-out;
+  
+  position: relative;
+  z-index: 1;
+}
+
+/* Animation for fluid background movement */
+@keyframes backgroundMove {
+  0% {
+    background-position: top left;
+  }
+  50% {
+    background-position: top right;
+  }
+  100% {
+    background-position: top left;
+  }
+}
+
+h2 {
+  font-size: 3.5em;
+  color: #fff;
+  margin-bottom: 30px;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6); /* Bold shadow for depth */
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: bold;
+  animation: fadeIn 1s ease-in-out; /* Smooth fade-in for heading */
+}
+
+/* Table styling with a pop of color */
+.results-table {
+  width: 100%;
+  max-width: 750px;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Strong shadow for depth */
+  border-radius: 20px;
+  overflow: hidden;
+  animation: tableSlideUp 1.5s ease-in-out; /* Slide-up table animation */
+}
+
+/* Table header styling with gradient background */
+.results-table th,
+.results-table td {
+  padding: 18px;
+  text-align: left;
+  border-bottom: 2px solid #ddd;
+}
+
+.results-table th {
+  background-color: #FF1493; /* Hot pink header */
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.results-table tr:hover {
+  background-color: rgba(255, 105, 180, 0.2); /* Soft pink hover effect */
+  transform: scale(1.05); /* Slight scale on hover */
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.results-table td {
+  font-size: 1.1em;
+  color: #333;
+  transition: background-color 0.3s ease; /* Smooth transition for interaction */
+}
+
+.results-table td:last-child {
+  text-align: center;
+  font-weight: bold;
+  color: #FF1493; /* Highlight the final column with hot pink */
+}
+
+/* Heading fade-in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Table sliding effect */
+@keyframes tableSlideUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Message area for feedback or alerts */
+.message {
+  margin-top: 30px;
+  font-size: 1.4em;
+  color: #FF4500; /* Vivid orange for message text */
+  font-weight: bold;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Button styling (if used) */
+.button {
+  padding: 14px 28px;
+  background-color: #FF1493; /* Hot pink button background */
+  color: white;
+  font-size: 1.3em;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: #ff66b2; /* Light pink on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.button:active {
+  background-color: #ff3399; /* Darker pink on click */
+  transform: scale(1); /* Reset scale on click */
+}
