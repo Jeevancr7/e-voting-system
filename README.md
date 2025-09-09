@@ -1,72 +1,165 @@
-﻿# e-voting-system
+# E-Voting System
 
-# Getting Started with Create React App
+A secure and user-friendly electronic voting system built with the MEAN stack (MongoDB, Express.js, Angular, Node.js). This application allows users to register, login, cast votes, and view results in a transparent and efficient manner.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
 
-## Available Scripts
+- **User Authentication**: Secure login and registration with JWT tokens
+- **Role-based Access**: Different permissions for voters, administrators, and election officials
+- **Real-time Voting**: Cast votes securely with encryption
+- **Results Dashboard**: View live election results and statistics
+- **Admin Panel**: Manage elections, candidates, and users
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
 
-In the project directory, you can run:
+## Tech Stack
 
-### `npm start`
+### Backend
+- **Node.js** - Runtime environment
+- **Express.js** - Web framework
+- **MongoDB** - NoSQL database
+- **Mongoose** - ODM for MongoDB
+- **JWT** - JSON Web Tokens for authentication
+- **bcryptjs** - Password hashing
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Frontend
+- **React** - UI library
+- **React Router** - Client-side routing
+- **Axios** - HTTP client
+- **CSS3** - Styling
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Prerequisites
 
-### `npm test`
+- Node.js (v14 or higher)
+- MongoDB (v4.4 or higher)
+- npm or yarn
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/e-voting-system.git
+   cd e-voting-system
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Install backend dependencies**
+   ```bash
+   cd backend
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. **Install frontend dependencies**
+   ```bash
+   cd ../frontend
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. **Set up environment variables**
 
-### `npm run eject`
+   Create a `.env` file in the backend directory:
+   ```
+   PORT=5000
+   MONGODB_URI=mongodb://localhost:27017/votingdb
+   JWT_SECRET=your_jwt_secret_key
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. **Start MongoDB**
+   ```bash
+   # On Windows
+   net start MongoDB
+   # Or run mongod if not installed as service
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Start the backend server**
+   ```bash
+   cd backend
+   npm start
+   ```
+   The server will run on http://localhost:5000
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Start the frontend**
+   ```bash
+   cd frontend
+   npm start
+   ```
+   The app will be available at http://localhost:3000
 
-## Learn More
+## API Endpoints
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Authentication
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `GET /api/auth/profile` - Get user profile
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Voting
+- `GET /api/votes/candidates` - Get all candidates
+- `POST /api/votes/cast` - Cast a vote
+- `GET /api/votes/my-vote` - Get user's vote
 
-### Code Splitting
+### Results
+- `GET /api/results` - Get election results
+- `GET /api/results/live` - Get live voting statistics
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Project Structure
 
-### Analyzing the Bundle Size
+```
+e-voting-system/
+├── backend/
+│   ├── config/
+│   │   └── db.js
+│   ├── controllers/
+│   ├── middleware/
+│   │   └── auth.js
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Vote.js
+│   │   └── voteModel.js
+│   ├── routes/
+│   │   ├── auth.js
+│   │   ├── voteRoutes.js
+│   │   └── resultRoutes.js
+│   ├── server.js
+│   └── package.json
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── HomePage.js
+│   │   │   ├── Login.js
+│   │   │   ├── Register.js
+│   │   │   ├── VotingPage.js
+│   │   │   └── ResultsPage.js
+│   │   ├── App.js
+│   │   └── index.js
+│   └── package.json
+└── README.md
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Security Features
 
-### Making a Progressive Web App
+- Password hashing with bcrypt
+- JWT token-based authentication
+- Input validation and sanitization
+- CORS protection
+- Rate limiting (can be added)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contributing
 
-### Advanced Configuration
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## License
 
-### Deployment
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Contact
 
-### `npm run build` fails to minify
+For questions or support, please contact the development team.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+**Note**: This is a demonstration project. In a production environment, additional security measures and compliance with election regulations would be required.
